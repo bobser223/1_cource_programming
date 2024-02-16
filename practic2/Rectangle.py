@@ -8,3 +8,5 @@ class Rectangle():
     def square(self):
         result = self.a * self.b
         return result
+    def __str__(self) -> str:
+        return f"Rectangle: a={self.a} b={self.b}"

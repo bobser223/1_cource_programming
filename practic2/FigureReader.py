@@ -1,4 +1,6 @@
 from Triangle import Triangle
+from Rectangle import Rectangle
+from Trapeze import Trapeze
 class FigureReader:
     def __init__(self, file_name):
         self.file_neme = file_name
@@ -15,13 +17,17 @@ class FigureReader:
                         triangle = Triangle(a, b, c)
                         figures.append(triangle)
                     elif type == "Rectangle":
-                        pass
+                        a, b = [float(el) for el in data[1:]]
+                        rectangle = Rectangle(a, b)
+                        figures.append(rectangle)
                     elif type == "Parallelogram":
                         pass
                     elif type == "Circle":
                         pass
                     elif type == "Trapeze":
-                        pass
+                        a, b, c, d = [float(el) for el in data[1:]]
+                        trapeze = Trapeze(a, b, c, d)
+                        figures.append(trapeze)
                 except AssertionError:
                     pass
         return figures
