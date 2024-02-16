@@ -3,10 +3,10 @@ from Rectangle import Rectangle
 from Trapeze import Trapeze
 class FigureReader:
     def __init__(self, file_name):
-        self.file_neme = file_name
+        self.file_name = file_name
     def read(self):
         figures = []
-        with open(self.file_neme) as f:
+        with open(self.file_name) as f:
             for line in f:
                 data = line.split()
                 #print(data)
