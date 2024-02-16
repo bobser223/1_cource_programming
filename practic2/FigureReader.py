@@ -8,7 +8,6 @@ from TriangularPrism import TriangularPrism
 from RectangularParallelepiped import RectangularParallelepiped
 from QuadrangularPyramid import QuadrangularPyramid
 from Cone import Cone
-from Circle import Circle
 from Ball import Ball
 class FigureReader:
     def __init__(self, file_name):
