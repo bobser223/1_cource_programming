@@ -5,7 +5,7 @@ class Rectangle():
     def perimeter(self):
         result = 2 * self.a + 2 * self.b
         return result
-    def square(self):
+    def area(self):
         result = self.a * self.b
         return result
     def __str__(self) -> str:

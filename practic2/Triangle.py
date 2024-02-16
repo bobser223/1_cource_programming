@@ -3,7 +3,7 @@ class Triangle:
         my_list = [a, b, c]
         my_list.sort()
         a, b, c = my_list
-        assert a + b > c
+        # assert a + b > c
         self.a = a
         self.b = b
         self.c = c
@@ -11,7 +11,7 @@ class Triangle:
         return self.perimeter() / 2
     def perimeter(self):
         return self.a + self.b + self.c
-    def square(self):
+    def area(self):
         result = (self.semiperimeter() * (self.semiperimeter() - self.a) * (self.semiperimeter() - self.b) * (self.semiperimeter() - self.c)) ** 0.5
         return result
     def __str__(self) -> str:

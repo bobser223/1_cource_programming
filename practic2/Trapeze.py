@@ -11,7 +11,7 @@ class Trapeze:
     def perimeter(self):
         result = self.a + self.b + self.c + self.d
         return result
-    def square(self):
+    def area(self):
         result = ((self.a + self.b) / 2) * (self.c ** 2 - (((self.a - self.b)**2 + self.c ** 2 - self.d ** 2)/(2 * (self.a - self.b)))**2) ** 0.5
         return result
     def __str__(self) -> str:
