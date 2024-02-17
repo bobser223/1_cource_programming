@@ -1,4 +1,4 @@
-class Triangularpyramid:
+class TriangularPyramid:
     def __init__(self, a, h):
         self.a = a #сторона
         self.h = h #висота

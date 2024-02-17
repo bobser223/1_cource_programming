@@ -3,7 +3,7 @@ from Rectangle import Rectangle
 from Trapeze import Trapeze
 from Circle import Circle
 from Parallelogram import Parallelogram
-from Triangularpyramid import Triangularpyramid
+from TriangularPyramid import TriangularPyramid
 from TriangularPrism import TriangularPrism
 from RectangularParallelepiped import RectangularParallelepiped
 from QuadrangularPyramid import QuadrangularPyramid
@@ -43,7 +43,7 @@ class FigureReader:
                         figures.append(trapeze)
                     elif type == "TriangularPyramid":
                         a, h = [float(el) for el in data[1:]]
-                        triangularpyramid = Triangularpyramid(a, h)
+                        triangularpyramid = TriangularPyramid(a, h)
                         figures.append(triangularpyramid)
                     elif type == "TriangularPrism":
                         a, b, c, l = [float(el) for el in data[1:]]
@@ -72,6 +72,7 @@ class FigureReader:
                 except AssertionError:
                     pass
         return figures
+
 
 
 
