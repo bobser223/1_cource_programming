@@ -4,7 +4,7 @@ class Parallelogram:
         self.a = a
         self.b = b
         self.h = h
-    def perimeter(self):
+    def perimeterOrVolume(self):
         return (self.a * 2 + self.b * 2)
     def area(self):
         return (self.a * self.h)

@@ -9,7 +9,7 @@ class Ball:
         result = 4 * pi * self.r ** 2
         return result
 
-    def volume(self):
+    def perimeterOrVolume(self):
         result = (4/3) * pi * self.r ** 3
         return result
     def __str__(self) -> str:

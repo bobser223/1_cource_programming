@@ -21,5 +21,6 @@ class Cone:
         return result
     def volume(self):
         result = 1/3 * pi * (self.r ** 2) * self.h
+        return result
     def __str__(self) -> str:
         return f"Cone: r={self.r} h={self.h}"

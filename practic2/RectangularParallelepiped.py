@@ -4,7 +4,7 @@ class RectangularParallelepiped:
         self.a = a
         self.b = b
         self.c = c
-    def volume(self):
+    def perimeterOrVolume(self):
         return self.a * self.b * self.c
     def area(self):
         return 2 * self.a * self.b + 2 * self.a * self.c + 2 * self.b * self.c
