@@ -2,7 +2,7 @@
 from FigureReader1 import FigureReader1
 counter = 1
 if __name__ == "__main__":
-    reader = FigureReader1("input.txt")
+    reader = FigureReader1("input01.txt")
     figures = reader.read()
     for figure in figures:
         print(counter, figure, "Area = ", figure.area())

@@ -1,7 +1,7 @@
 
 class Trapeze:
     def __init__(self, a, b, c, d):
-        assert a > 0 and b > 0 and c > 0 and d > 0 and a + b > c and a + b > d
+        assert a > 0 and b > 0 and c > 0 and d > 0 and a + b > c and a + b > d and a != b
         # основи
         self.a = a
         self.b = b
