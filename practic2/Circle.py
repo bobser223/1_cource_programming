@@ -4,14 +4,13 @@ class Circle:
     def __init__(self, r):
         assert r > 0
         self.r = r
-    def perimeter(self): #LENTH
-        result = 2 * pi * self.r
-        return result
+        self.roundedPi = round(pi, 5)
     def length(self):
-        result = 2 * pi * self.r
+        result = 2 * self.roundedPi * self.r
         return result
     def area(self):
-        result = pi * self.r ** 2
+        result = self.roundedPi * self.r ** 2
+
         return result
     def __str__(self) -> str:
         return f"Circle: r={self.r}"

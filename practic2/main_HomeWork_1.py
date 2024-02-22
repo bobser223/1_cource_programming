@@ -5,19 +5,8 @@ def is_not_complex(a):
     else:
         return True
 
-# def Kostyl_for_maxAtributes(a):
-#     reader = FigureReader2("input01.txt")
-#     figures = reader.read()
-#     maxAtributes = [0,0]
-#     for figure in figures:
-#         try:
-#             maxAtributes[0] = figure.area()
-#             maxAtributes[1] = figure.perimeter()
-#         except AttributeError:
-#             continue
-#     return maxAtributes
-def finalResult(a):
-    reader = FigureReader2(a)
+def finalResult(a_file):
+    reader = FigureReader2(a_file)
     figures = reader.read()
     maxAttributes = [0, 0]  # відповідно ні проща, ні периметер не можуть бути менші за 0
     maxFigure = figures[0]
@@ -63,3 +52,15 @@ if __name__ == "__main__":
 #             except (AttributeError, TypeError):
 #                 continue
 #         print("And the champion is", maxFigure, "it's area =", maxAttributes[0], (lambda: "and it's length =" if maxFigure.__class__.__name__ == "Circle"  else "and it's perimeter =")(), maxAttributes[1])
+
+# def Kostyl_for_maxAtributes(a):
+#     reader = FigureReader2("input01.txt")
+#     figures = reader.read()
+#     maxAtributes = [0,0]
+#     for figure in figures:
+#         try:
+#             maxAtributes[0] = figure.area()
+#             maxAtributes[1] = figure.perimeter()
+#         except AttributeError:
+#             continue
+#     return maxAtributesgit add .

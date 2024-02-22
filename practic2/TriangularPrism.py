@@ -14,7 +14,15 @@ class TriangularPrism:
         result_tr = (self.semiperimeter() * (self.semiperimeter() - self.a) * (self.semiperimeter() - self.b) * (self.semiperimeter() - self.c)) ** 0.5
         result_re = self.a * self.l + self.b * self.l + self.c * self.l
         result = result_tr * 2 + result_re
-        return result
+        if isinstance(result, complex):
+
+            result_list = [round(result.real, 2), round(result.imag, 2)]
+            nonComplexReslt = max(result_list)
+            return nonComplexReslt
+        else:
+
+            return round(result, 2)
+
 
     def volume(self):
         result_tr = (self.semiperimeter() * (self.semiperimeter() - self.a) * (self.semiperimeter() - self.b) * (self.semiperimeter() - self.c)) ** 0.5

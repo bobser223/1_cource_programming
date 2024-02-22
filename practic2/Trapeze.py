@@ -13,6 +13,13 @@ class Trapeze:
         return result
     def area(self):
         result = ((self.a + self.b) / 2) * (self.c ** 2 - (((self.a - self.b)**2 + self.c ** 2 - self.d ** 2)/(2 * (self.a - self.b)))**2) ** 0.5
-        return result
+        if isinstance(result, complex):
+
+            result_list = [round(result.real, 2), round(result.imag, 2)]
+            nonComplexReslt = max(result_list)
+            return nonComplexReslt
+        else:
+
+            return round(result, 2)
     def __str__(self) -> str:
         return f"Trapeze: a={self.a} b={self.b} c={self.c} d={self.d}"

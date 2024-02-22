@@ -15,12 +15,13 @@ class Cone:
         assert r > 0 and h > 0
         self.r = r
         self.h = h
+        self.roundedPi = round(pi, 5)
     def area(self):
         l = (self.h ** 2 + self.r ** 2) ** 0.5
-        result = pi * self.r * (l + self.r)
+        result = self.roundedPi * self.r * (l + self.r)
         return result
     def volume(self):
-        result = 1/3 * pi * (self.r ** 2) * self.h
+        result = 1/3 * self.roundedPi * (self.r ** 2) * self.h
         return result
     def __str__(self) -> str:
         return f"Cone: r={self.r} h={self.h}"
