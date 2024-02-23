@@ -1,5 +1,5 @@
 import copy
-import randit from random
+# import randit from random
 # triangle_id = 0
 class Triangle:
     triangle_id = 0 # татичне поле класу
