@@ -87,14 +87,14 @@ def vectorWithMinComp(a_list):
             champs_list.append(vector)
         elif vector.min_comp() == champs_list[0].min_comp():
             champs_list.append(vector)
-        if len(champs_list) == 0:
-            return champs_list[0]
-        else:
-            champ = champs_list[0]
-            for vector in champs_list[1:]:
-                if vector.max_comp() > champs_list[0].min_comp():
-                    champ = vector
-            return champ
+    if len(champs_list) == 0:
+        return champs_list[0]
+    else:
+        champ = champs_list[0]
+        for vector in champs_list[1:]:
+            if vector.max_comp() > champs_list[0].min_comp():
+                champ = vector
+        return champ
 
 
 def absolutWinner(a_file):
