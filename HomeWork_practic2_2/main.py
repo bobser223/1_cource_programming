@@ -61,6 +61,15 @@ def meanLength(a_list):
     return suma/len(a_list)
 
 
+def countOfLongerVectorsThenTheMean(a_list):
+    counter = 0
+    for vector in a_list:
+        if vector.length() > meanLength(a_list):
+            counter += 1
+    return counter
+
+
+
 def vectorWithMaxComp(a_list):
     champs_list = [a_list[0]]
     for vector in a_list[1:]:
@@ -113,6 +122,8 @@ def absolutWinner(a_file):
         return None
 
 
+
+
 if __name__ == '__main__':
     for file in ("input01.txt", "input02.txt", "input03.txt"):
         # саксимальна дозмірність
@@ -124,6 +135,9 @@ if __name__ == '__main__':
         # середня довжина
         print(file, ":", "meanLength")
         print(meanLength((readFile(file))))
+        # к-сть векторів довших за середню довжину
+        print(file, ":", "countOfLongerVectorsThenTheMean")
+        print(countOfLongerVectorsThenTheMean((readFile(file))))
         # вектор з максимельною компоненто
         print(file, ":", "vectorWithMaxComp")
         print(vectorWithMaxComp((readFile(file))))
