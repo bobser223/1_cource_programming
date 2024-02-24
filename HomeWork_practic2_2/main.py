@@ -1,3 +1,5 @@
+from collections import Counter
+
 from Vector import Vector
 
 
@@ -93,8 +95,40 @@ def vectorWithMinComp(a_list):
                     champ = vector
             return champ
 
+def absolutWinner(a_file):
+    listOfAbsolutWinners = []
+    listOfAbsolutWinners.append(maxDimension((readFile(a_file))))
+    # максимальна довжинa
+    listOfAbsolutWinners.append(maxLength((readFile(a_file))))
+    # вектор з максимельною компоненто
+    listOfAbsolutWinners.append(vectorWithMaxComp((readFile(a_file))))
+    # вектор з мінімальною компонентою
+    listOfAbsolutWinners.append(vectorWithMinComp((readFile(a_file))))
+    counts = Counter(listOfAbsolutWinners)
+    if counts[max(counts, key=counts.get)] > 1:
+        return max(counts, key=counts.get)
+    else:
+        return None
 
 
 if __name__ == '__main__':
     for file in ("input01.txt", "input02.txt", "input03.txt"):
+        # саксимальна дозмірність
+        print(file, ":", "maxDimension")
+        print(maxDimension((readFile(file))))
+        # максимальна довжина
+        print(file, ":", "maxLength")
+        print(maxLength((readFile(file))))
+        # середня довжина
+        print(file, ":", "meanLength")
+        print(meanLength((readFile(file))))
+        # вектор з максимельною компоненто
+        print(file, ":", "vectorWithMaxComp")
+        print(vectorWithMaxComp((readFile(file))))
+        # вектор з мінімальною компонентою
+        print(file, ":", "vectorWithMinComp")
         print(vectorWithMinComp((readFile(file))))
+        if absolutWinner(file):
+            print("and the absolut winner of", file, "is:", absolutWinner(file))
+
+        # print(absolutWinner(file))
