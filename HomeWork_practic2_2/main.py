@@ -92,7 +92,7 @@ def vectorWithMinComp(a_list):
     else:
         champ = champs_list[0]
         for vector in champs_list[1:]:
-            if vector.max_comp() > champs_list[0].min_comp():
+            if vector.max_comp() > champ.min_comp():
                 champ = vector
         return champ
 
