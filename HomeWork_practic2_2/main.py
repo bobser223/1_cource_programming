@@ -78,6 +78,7 @@ def vectorWithMaxComp(a_list):
                 champ = vector
         return champ
 
+
 def vectorWithMinComp(a_list):
     champs_list = [a_list[0]]
     for vector in a_list[1:]:
@@ -94,6 +95,7 @@ def vectorWithMinComp(a_list):
                 if vector.max_comp() > champs_list[0].min_comp():
                     champ = vector
             return champ
+
 
 def absolutWinner(a_file):
     listOfAbsolutWinners = []
