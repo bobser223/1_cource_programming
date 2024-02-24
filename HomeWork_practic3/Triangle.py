@@ -2,13 +2,12 @@ from math import sin, cos, pi, radians
 import turtle
 
 class Triangle:
-    default_color = "#FF0000"
+    default_color = "DeepPink3"
 
     def __init__(self, x1, y1, x2, y2):
         self.vertex1 = (x1, y1)
         self.vertex2 = (x2, y2)
         self.color = Triangle.default_color
-
         self.position = (0, 0)
 
     def set_position(self, x, y):
