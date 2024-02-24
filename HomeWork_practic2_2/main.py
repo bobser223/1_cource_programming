@@ -69,7 +69,7 @@ def vectorWithMaxComp(a_list):
             champs_list.append(vector)
         if vector.max_comp() == champs_list[0].max_comp():
             champs_list.append(vector)
-    if len(champs_list) == 0:
+    if len(champs_list) == 1:
         return champs_list[0]
     else:
         champ = champs_list[0]
@@ -87,7 +87,7 @@ def vectorWithMinComp(a_list):
             champs_list.append(vector)
         elif vector.min_comp() == champs_list[0].min_comp():
             champs_list.append(vector)
-    if len(champs_list) == 0:
+    if len(champs_list) == 1:
         return champs_list[0]
     else:
         champ = champs_list[0]
