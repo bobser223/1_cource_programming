@@ -15,8 +15,10 @@ def random_color():
 
 if __name__ == '__main__':
     turtle.speed(0)
+    # while True:
     for _ in range(100):
         triangle = Triangle(randint(-200, 200), randint(-200, 200), randint(-200, 200), randint(-200, 200))
         triangle.set_position(randint(-200, 200), randint(-200, 200))
         triangle.set_color(random_color())
         triangle.draw()
+    turtle.mainloop()
