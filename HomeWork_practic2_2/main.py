@@ -63,8 +63,9 @@ def meanLength(a_list):
 
 def countOfLongerVectorsThenTheMean(a_list):
     counter = 0
+    mean_length = meanLength(a_list)
     for vector in a_list:
-        if vector.length() > meanLength(a_list):
+        if vector.length() > mean_length:
             counter += 1
     return counter
 
@@ -125,7 +126,7 @@ def absolutWinner(a_file):
 
 
 if __name__ == '__main__':
-    for file in ("input01.txt", "input02.txt", "input03.txt"):
+    for file in ("input01.txt", "input02.txt", "input03.txt", "input04.txt"):
         # саксимальна дозмірність
         print(file, ":", "maxDimension")
         print(maxDimension((readFile(file))))
