@@ -4,12 +4,21 @@ import ast
 import turtle
 
 def random_color():
-    colors = []
-    with open('colors.txt', 'r') as f:
-        for line in f:
-            line = line.strip()
-            colors.append((line))
-    return colors[randint(0, len(colors) - 1)]
+    # colors = []
+    # with open('colors.txt', 'r') as f:
+    #     for line in f:
+    #         line = line.strip()
+    #         colors.append((line))
+    # return colors[randint(0, len(colors) - 1)]
+    a = str(randint(0, 255))
+    b = str(randint(0, 255))
+    c = str(randint(0, 255))
+    color = a + b + c
+    color = str(hex(int(color)))[2:]
+    color = color.upper()
+    if len(color) != 6:
+        return random_color()
+    return "#" + color
     # return str([randint(0, 255), randint(0, 255), randint(0, 255)])
     # return "black"
 

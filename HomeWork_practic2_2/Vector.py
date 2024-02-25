@@ -38,19 +38,21 @@ class Vector:
         return sum(self.vector)
 
     def max_comp(self):
-        max_comp = self.vector[0]
-
-        for el in self.vector[1:]:
-            if el > max_comp:
-                max_comp = el
-        return max_comp
+        # max_comp = self.vector[0]
+        #
+        # for el in self.vector[1:]:
+        #     if el > max_comp:
+        #         max_comp = el
+        # return max_comp
+        return max(self.vector)
 
     def min_comp(self):
-        min_comp = self.vector[0]
-        for el in self.vector[1:]:
-            if el < min_comp:
-                min_comp = el
-        return min_comp
+        # min_comp = self.vector[0]
+        # for el in self.vector[1:]:
+        #     if el < min_comp:
+        #         min_comp = el
+        # return min_comp
+        return min(self.vector)
 
     def __str__(self) -> str:
         coordinates = list(map(float, self.vector))
