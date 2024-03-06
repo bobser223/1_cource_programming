@@ -22,7 +22,24 @@ def random_color():
     # return str([randint(0, 255), randint(0, 255), randint(0, 255)])
     # return "black"
 
-if __name__ == '__main__':
+    # def rotate_around_point(self, angle_deg, point):
+    #     # Перетворюємо кут з градусів у радіани
+    #     angle_rad = radians(angle_deg)
+    #
+    #     # Обчислюємо вектор переміщення до точки повороту
+    #     dx = self.position[0] - point[0]
+    #     dy = self.position[1] - point[1]
+    #
+    #     # Використовуємо матрицю повороту для обчислення нового положення вектора переміщення
+    #     rotated_dx = dx * cos(angle_rad) - dy * sin(angle_rad)
+    #     rotated_dy = dx * sin(angle_rad) + dy * cos(angle_rad)
+    #
+    #     # Встановлюємо нове положення трикутника, зміщуючи його до початкової точки повороту
+    #     # і додаючи обернений вектор переміщення
+    #     self.position = (point[0] + rotated_dx, point[1] + rotated_dy)
+
+        # Збільшуємо кут повороту трикутника
+        self.rotation += angle_radif __name__ == '__main__':
     turtle.speed(0)
     # while True:
     for _ in range(100):
