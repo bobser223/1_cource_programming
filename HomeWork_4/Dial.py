@@ -54,7 +54,7 @@ class Dial:
         turnedVector = self.multMatrixVector(fiMatrix, self.__invisibleVector)
         return turnedVector
 
-    def drawNumbers(self):
+    def drawNumbers(self): # Хотілося б циклом, але анріал
         fi = 30
         self.__three.set_position(*self.__invisibleVector)
         self.__three.draw()
@@ -89,7 +89,7 @@ class Dial:
         self.__five.draw()
         fi += 30
         self.__four.set_position(*self.turnInvisibleVector(fi))
-        self.__four.draw()
+        self.__four.draw() # #
 
 
     def drawCholck(self):
@@ -106,7 +106,6 @@ class Dial:
 
 
     def showTime(self):
-        fi = 0
         while True:
             for fi in range(360, 0, -5):
                 self.__arrow.set_fi_degree(fi)
