@@ -92,7 +92,7 @@ class Dial:
         self.__five.draw()
         fi += 30
         self.__four.set_position(*self.turnInvisibleVector(fi))
-        self.__four.draw() 
+        self.__four.draw()
 
 
     def drawCholck(self):
@@ -120,7 +120,7 @@ class Dial:
                     for fi in range(360, 0, -5):
                         self.__arrow.set_fi_degree(fi)
                         self.__arrow.draw()
-                        # time.sleep(1)
+                        time.sleep(1)
                         self.__arrow.t.undo()
                     self.__arrow_min.t.undo()
                 self.__arrow_hour.t.undo()
