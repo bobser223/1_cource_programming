@@ -2,9 +2,9 @@ import turtle
 from math import sin, cos, radians
 import time
 
-class Arrow:
+class Arrow_min:
     def __init__(self):
-        self._length = (0, 170)
+        self._length = (0, 200)
         self._fi_degree = 0
         self.t = turtle.Turtle()
 
@@ -32,6 +32,7 @@ class Arrow:
         return turnedVector
 
     def draw(self):
+        self.t.color("red")
         curVec = self.turnArrow()
         self.t.penup()
         self.t.goto(0,0)
@@ -47,7 +48,3 @@ if __name__ == "__main__":
         for fi in range(360, 0, -5):
             self.__arrow.set_fi_degree(fi)
             time.sleep(1)
-
-
-
-

@@ -15,7 +15,8 @@ from Eleven import Eleven
 from Twelve import Twelve
 from Arrow import Arrow
 import time
-
+from Arrow_min import Arrow_min
+from Arrow_hour import Arrow_hour
 
 class Dial:
 
@@ -37,6 +38,8 @@ class Dial:
         self.__eleven = Eleven()
         self.__twelve = Twelve()
         self.__arrow = Arrow()
+        self.__arrow_min = Arrow_min()
+        self.__arrow_hour = Arrow_hour()
 
     @staticmethod
     def multMatrixVector(M, v):
@@ -89,7 +92,7 @@ class Dial:
         self.__five.draw()
         fi += 30
         self.__four.set_position(*self.turnInvisibleVector(fi))
-        self.__four.draw() # #
+        self.__four.draw() 
 
 
     def drawCholck(self):
@@ -103,16 +106,24 @@ class Dial:
 
         self.drawNumbers()
         self.showTime()
+        turtle.done()
 
 
     def showTime(self):
         while True:
-            for fi in range(360, 0, -5):
-                self.__arrow.set_fi_degree(fi)
-                self.__arrow.draw()
-                time.sleep(1)
-                turtle.undo()
-
+            for alpha in range(360, 0, -30):
+                self.__arrow_hour.set_fi_degree(alpha)
+                self.__arrow_hour.draw()
+                for theta in range(360, 0, -5):
+                    self.__arrow_min.set_fi_degree(theta)
+                    self.__arrow_min.draw()
+                    for fi in range(360, 0, -5):
+                        self.__arrow.set_fi_degree(fi)
+                        self.__arrow.draw()
+                        # time.sleep(1)
+                        self.__arrow.t.undo()
+                    self.__arrow_min.t.undo()
+                self.__arrow_hour.t.undo()
 
 
 
