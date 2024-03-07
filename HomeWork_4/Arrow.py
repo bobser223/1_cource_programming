@@ -4,7 +4,7 @@ import time
 
 class Arrow:
     def __init__(self):
-        self._length = (0, 170)
+        self._length = (0, 240)
         self._fi_degree = 0
         self.t = turtle.Turtle()
 
@@ -32,11 +32,13 @@ class Arrow:
         return turnedVector
 
     def draw(self):
+        self.t.speed(0)
         curVec = self.turnArrow()
         self.t.penup()
         self.t.goto(0,0)
         self.t.pendown()
         self.t.goto(curVec)
+        self.t.goto(0, 0)
 
 
 if __name__ == "__main__":

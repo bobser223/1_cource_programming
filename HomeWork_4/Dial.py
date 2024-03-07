@@ -17,13 +17,15 @@ from Arrow import Arrow
 import time
 from Arrow_min import Arrow_min
 from Arrow_hour import Arrow_hour
+from Stick import Stick
+import datetime
 
 class Dial:
 
     def __init__(self):
         self.radius = 300
         self.position = (0, 0)
-        self.__invisibleVector = (265, 0)
+        self.__invisibleVector = (250, 0)
         self.__zero = Zero()
         self.__one = One()
         self.__two = Two()
@@ -40,6 +42,11 @@ class Dial:
         self.__arrow = Arrow()
         self.__arrow_min = Arrow_min()
         self.__arrow_hour = Arrow_hour()
+        self.__current_hour = datetime.datetime.now().hour
+        self.__current_minute = datetime.datetime.now().minute
+        self.__current_second = datetime.datetime.now().second
+        self.__stick = Stick()
+
 
     @staticmethod
     def multMatrixVector(M, v):
@@ -57,7 +64,8 @@ class Dial:
         turnedVector = self.multMatrixVector(fiMatrix, self.__invisibleVector)
         return turnedVector
 
-    def drawNumbers(self): # Хотілося б циклом, але анріал
+    def drawNumbers(self):  # Хотілося б циклом, але анріал
+        turtle.speed(0)
         fi = 30
         self.__three.set_position(*self.__invisibleVector)
         self.__three.draw()
@@ -95,36 +103,59 @@ class Dial:
         self.__four.draw()
 
 
+    def drawSticks(self):
+        for fi in range(0, 360, 6):
+            self.__stick.set_fi_degree(fi)
+            if fi % 30 == 0:
+                self.__stick.draw_og()
+            else:
+                self.__stick.draw_lil()
+
     def drawCholck(self):
+        turtle.speed(0)
         currentPosition = (self.position[0], self.position[1] - self.radius)
         turtle.penup()
         turtle.goto(currentPosition)
-        
+
         turtle.pendown()
         turtle.circle(self.radius)
         turtle.penup()
 
+
+
         self.drawNumbers()
+        self.drawSticks()
+
         self.showTime()
         turtle.done()
 
-
     def showTime(self):
+        hours = self.__current_hour
+        seconds = self.__current_second
+        minutes = self.__current_minute
+        alpha = -30
+        beta = -6
+        fi = -6
         while True:
-            for alpha in range(360, 0, -30):
-                self.__arrow_hour.set_fi_degree(alpha)
+            while hours < 12:
+                self.__arrow_hour.set_fi_degree(alpha * hours)
                 self.__arrow_hour.draw()
-                for theta in range(360, 0, -5):
-                    self.__arrow_min.set_fi_degree(theta)
+                while minutes < 60:
+                    self.__arrow_min.set_fi_degree(beta * minutes)
                     self.__arrow_min.draw()
-                    for fi in range(360, 0, -5):
-                        self.__arrow.set_fi_degree(fi)
+                    while seconds < 60:
+                        self.__arrow.set_fi_degree(fi * seconds)
                         self.__arrow.draw()
                         time.sleep(1)
-                        self.__arrow.t.undo()
-                    self.__arrow_min.t.undo()
-                self.__arrow_hour.t.undo()
-
+                        self.__arrow.t.clear()
+                        seconds += 1
+                    seconds = 0
+                    self.__arrow_min.t.clear()
+                    minutes += 1
+                minutes = 0
+                self.__arrow_hour.t.clear()
+                hours += 1
+            hours = 0
 
 
 

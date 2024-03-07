@@ -31,13 +31,16 @@ class Arrow_min:
         turnedVector = self.multMatrixVector(fiMatrix, self._length)
         return turnedVector
 
+
     def draw(self):
+        self.t.speed(0)
         self.t.color("red")
         curVec = self.turnArrow()
         self.t.penup()
         self.t.goto(0,0)
         self.t.pendown()
         self.t.goto(curVec)
+        self.t.goto(0, 0)
 
 
 if __name__ == "__main__":
