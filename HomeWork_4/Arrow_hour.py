@@ -33,7 +33,7 @@ class Arrow_hour:
 
     def draw(self):
         self.t.speed(0)
-        self.t.color("yellow")
+        # self.t.color("yellow")
         curVec = self.turnArrow()
         self.t.penup()
         self.t.goto(0,0)

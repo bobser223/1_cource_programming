@@ -130,6 +130,7 @@ class Dial:
         turtle.done()
 
     def showTime(self):
+
         hours = self.__current_hour
         seconds = self.__current_second
         minutes = self.__current_minute
@@ -137,7 +138,7 @@ class Dial:
         beta = -6
         fi = -6
         while True:
-            while hours < 12:
+            while hours < 24:
                 self.__arrow_hour.set_fi_degree(alpha * hours)
                 self.__arrow_hour.draw()
                 while minutes < 60:

@@ -34,7 +34,7 @@ class Arrow_min:
 
     def draw(self):
         self.t.speed(0)
-        self.t.color("red")
+        # self.t.color("red")
         curVec = self.turnArrow()
         self.t.penup()
         self.t.goto(0,0)
