@@ -14,6 +14,12 @@ class RationalList:
     def __len__(self):
         return len(self.list)
 
+    def sum(self):
+        suma = self.list[0]
+        for i in range(1, len(self.list)):
+            suma = suma + self.list[i]
+        return suma
+
     def __add__(self, other):
         if isinstance(other, RationalList):
             new_list = RationalList()
@@ -39,7 +45,6 @@ class RationalList:
             for item in other:
                 self.list.append(item)
 
-
         elif isinstance(other, int):
             self.list.append(R(other))
 
@@ -47,6 +52,7 @@ class RationalList:
             self.list.append(other)
 
         return self
+
 
 
     def __str__(self):

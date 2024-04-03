@@ -1,8 +1,23 @@
 
 class R:
     def __init__(self, a, b=1):
-        self._a = a
-        self._b = b
+        if isinstance(a, int) and isinstance(b, int):
+            self._a = a
+            self._b = b
+        if isinstance(a, str):
+            if "/" in a:
+                for j in range(len(a)):
+                    if string[j] == "/":
+                        try:
+                            self._a = int(a[0: j])
+                            self._b = int(a[j + 1:])
+                        except ValueError:
+                            raise ValueError("there's not only one '/' at the string or another symbols except - and /")
+            else:
+                try:
+                    self._a = int(a)
+                except ValueError:
+                    raise ValueError("absolut bulshit number")
 
 
     @staticmethod
