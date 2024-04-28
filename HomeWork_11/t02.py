@@ -40,11 +40,11 @@ def sequence_c(x):
 def ln_d(x):
     s = x
     a = x
-    k = 0
+    n = 0
     while True:
-        k += 1
+        n += 1
         a = a * x**2
-        b = a / (2*k + 1)
+        b = a / (2*n + 1)
         s += b
         if abs(b) < EPSILON:
             return 2*s
