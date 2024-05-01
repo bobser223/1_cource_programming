@@ -5,14 +5,11 @@ class HumNatStudent(Student):
     def __init__(self, name: str, credits_required: int, uah: float):
         super().__init__(name, credits_required, uah)
 
-
     def teach_humanitarian(self, teacher, credits: int) -> None:
-        subject_type = "humanitarian"
-        teacher.teach_humanitarian(self, credits, subject_type)
+        teacher.teach_humanitarian(self, credits)
 
     def teach_natural(self, teacher, credits: int) -> None:
-        subject_type = "natural"
-        teacher.teach_natural(self, credits, subject_type)
+        teacher.teach_natural(self, credits)
 
     def __str__(self):
         return (f'Humanitarian and natural student {self.name}, credits required: {self.credits_required}, money left: {self.uah}'

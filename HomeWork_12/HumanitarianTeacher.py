@@ -1,5 +1,5 @@
 from Teacher import Teacher
-
+from NaturalStudent import NaturalStudent
 
 class HumanitarianTeacher(Teacher):
     def __init__(self, name, fortran_pension=None):
@@ -7,19 +7,20 @@ class HumanitarianTeacher(Teacher):
         self.fortran_pension = fortran_pension
 
     def teach_natural(self, student, credit):
-        raise TypeError("The dean's office messed up again, I'm humanitarian teacher, not natural (no connection with steroids)")
+        if isinstance(student, NaturalStudent):
+            raise AssertionError("The dean's office messed up again, I'm humanitarian teacher,"
+             " not natural (no connection with steroids)")
+        student.credits_required -= credit
+
+        student.natural_count += 1
 
     def teach_humanitarian(self, student, credit):
+        if isinstance(student, NaturalStudent):
+            raise AssertionError("The dean's office messed up again, I'm humanitarian teacher,"
+                                 " not natural (no connection with steroids)")
         student.credits_required -= credit
-
         student.humanities_count += 1
 
-    def teach_humanitarian_and_natural(self, student, credit, subject_type):
-        student.credits_required -= credit
-        if subject_type == "natural":
-            student.natural_count += 1
-        else:  # Subject_type == "humanitarian"
-            student.humanitarian_count += 1
 
 
     def __str__(self):

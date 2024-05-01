@@ -19,14 +19,14 @@ class Student(metaclass=ABCMeta):
         self.credits_required -= credits
         self.natural_count += 1
 
-    def get_scholarship(self, uah: float) -> None:
-        self.uah += uah
+    def get_scholarship(self, accounting, money: float, currency="UAH") -> None:  #UAH/EUR/USD possible
+        accounting.give_money(self, money, currency)
 
     def rob_ancestors(self, uah: float) -> None:  # Money from parents
         self.uah += uah
 
-    def pay_dormitory(self, uah: float) -> None:  # Money for home
-        self.uah -= uah
+    def pay_dormitory(self, dormitory, money: float, currency="UAH") -> None:  # UAH/EUR/USD possible
+        dormitory.take_money(self, money, currency)  # Money fore flat
 
-    def pay_canteen(self, uah: float) -> None:  # Money for food
-        self.uah -= uah
+    def pay_canteen(self, canteen, money: float, currency="UAH") -> None:  # UAH/EUR/USD possible
+        canteen.take_money(self, money, currency)  # Money fore food

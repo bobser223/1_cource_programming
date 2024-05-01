@@ -13,6 +13,3 @@ class Teacher(metaclass=ABCMeta):
     def teach_humanitarian(self):
         pass
 
-    @abstractmethod
-    def teach_humanitarian_and_natural(self):
-        pass
