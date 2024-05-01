@@ -8,4 +8,4 @@ class Canteen:
         if student.uah <= 0 or student.uah < uah:
             raise Exception("Not enough money, go to the work, no more university 4 u!!!!!!!!")
         student.uah -= uah
-        print("syda 'canteen'")
+        # print("syda 'canteen'")

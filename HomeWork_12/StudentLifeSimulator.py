@@ -55,6 +55,7 @@ class StudentLifeSimulator(ActivityTracker):
                 activities_dict[life_activities[i][0]](institutions_dict[life_activities[i][0]], life_activities[i][1])
                 # student.action(Visitor, money)
         return student
+    
 
 
 if __name__ == '__main__':
